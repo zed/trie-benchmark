@@ -1,7 +1,7 @@
 trie-benchmark
 ==============
 
-trie benchmark for the "longest prefix match" problem.
+trie benchmark for the ["longest prefix match" problem](http://stackoverflow.com/questions/5434813/longest-prefix-matches-for-urls).
 
 To generate time performance data (install pytrie, trie, datrie,
 SuffixTree or remove them from comparison):
