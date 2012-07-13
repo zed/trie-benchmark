@@ -26,7 +26,7 @@ See results [Performance comparison suffixtree vs. pytrie vs. trie vs. datrie vs
 | pytrie      |   3.383 |   4.0 |
 | trie        |   3.803 |   4.5 |
 | datrie      |   0.194 |   0.2 |
-| startswith  |   0.077 |   0.1 |
+| startswith  |   0.069 |   0.1 |
 #+TBLFM: $3=$2/@3$2;%.1f
 
 Type C-c C-c on TBLFM line to update `ratio` column
