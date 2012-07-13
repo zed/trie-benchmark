@@ -14,6 +14,10 @@ To plot the data (install numpy/matplotlib):
 
 see [make-figures.py](https://gist.github.com/235404)
 
+Or to combine both with a auto-generated date-based prefix:
+
+    $ ./run.sh
+
 See results [Performance comparison suffixtree vs. pytrie vs. trie vs. datrie vs. startswith -functions](http://stackoverflow.com/a/5479374/).
 
 <!-- To edit enable orgtbl-mode
