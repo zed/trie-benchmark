@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import importlib
+import inspect
 import os
 import string
 import sys
@@ -93,8 +95,10 @@ longest_match_datrie.trie = None
 
 
 def test(func, keyword):
-    for f in [longest_match_startswith, longest_match_datrie,
-              longest_match_pytrie, longest_match_trie]:
+    me = importlib.import_module(__name__)
+    for name, f in inspect.getmembers(me, inspect.isfunction):
+        if not name.startswith('longest_match_'):
+            continue
         for url_prefix in [keyword]+"google youtube abcdef \n  ".split(' '):
             sp = f(url_prefix)
             me = func(url_prefix)
@@ -138,7 +142,7 @@ def main():
                    help='number of hosts to use for the search')
     args = p.parse_args()
 
-    me = __import__(__name__)
+    me = importlib.import_module(__name__)
     func = getattr(me, "longest_match_"+args.suffix)
     if args.test:
         init_hosts(trim=args.n)
