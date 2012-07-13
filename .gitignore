@@ -27,3 +27,6 @@ pip-log.txt
 .mr.developer.cfg
 /README.html
 /top-1m.csv.zip
+*.png
+*.pdf
+*.xy
