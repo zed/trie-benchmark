@@ -8,6 +8,7 @@ import zipfile
 from itertools import islice
 from timeit import default_timer as timer
 
+
 def init_hosts(trim):
     global hosts
 
@@ -121,14 +122,20 @@ def timef(f, keyword, N):
     print "%s %5d microseconds, max %d" % (f.__name__, t, max(r))
     return t
 
+
 def main():
     import argparse
 
-    p = argparse.ArgumentParser()
-    p.add_argument('--test', action='store_true')
-    p.add_argument('--suffix', default='pytrie')
-    p.add_argument('--keyword', default='abc')
-    p.add_argument('--n', type=int, default=1000)
+    p = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    p.add_argument('--test', action='store_true',
+                   help='test all `longest_match_*` functions')
+    p.add_argument('--suffix', default='pytrie',
+                   help='which `longest_match_`suffix`() to use')
+    p.add_argument('--keyword', default='abc',
+                   help='keyword to search')
+    p.add_argument('--n', type=int, default=1000,
+                   help='number of hosts to use for the search')
     args = p.parse_args()
 
     me = __import__(__name__)
